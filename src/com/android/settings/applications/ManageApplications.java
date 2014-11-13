@@ -186,6 +186,8 @@ public class ManageApplications extends Fragment implements
 
     public static final int APP_INSTALL_LOCATION = MENU_OPTIONS_BASE + 9;
 
+    public static final int SHOW_PROTECTED_APPS = MENU_OPTIONS_BASE + 10;
+
     // sort order
     private int mSortOrder = SORT_ORDER_ALPHA;
     
@@ -1126,6 +1128,8 @@ public class ManageApplications extends Fragment implements
                 .setShowAsAction(MenuItem.SHOW_AS_ACTION_IF_ROOM);
         menu.add(0, RESET_APP_PREFERENCES, 4, R.string.reset_app_preferences)
                 .setShowAsAction(MenuItem.SHOW_AS_ACTION_NEVER);
+        menu.add(0, SHOW_PROTECTED_APPS, 5, R.string.protected_apps)
+                .setShowAsAction(MenuItem.SHOW_AS_ACTION_NEVER);
         int lastOptionOrder = 5;
         if (!getResources().getBoolean(R.bool.config_hide_app_install_location)
                 && Environment.getSecondaryStorageDirectory() != null
@@ -1170,6 +1174,7 @@ public class ManageApplications extends Fragment implements
             mOptionsMenu.findItem(SHOW_RUNNING_SERVICES).setVisible(showingBackground);
             mOptionsMenu.findItem(SHOW_BACKGROUND_PROCESSES).setVisible(!showingBackground);
             mOptionsMenu.findItem(RESET_APP_PREFERENCES).setVisible(false);
+            mOptionsMenu.findItem(SHOW_PROTECTED_APPS).setVisible(true);
             mShowBackground = showingBackground;
         } else {
             mOptionsMenu.findItem(SORT_ORDER_ALPHA).setVisible(mSortOrder != SORT_ORDER_ALPHA);
@@ -1177,6 +1182,7 @@ public class ManageApplications extends Fragment implements
             mOptionsMenu.findItem(SHOW_RUNNING_SERVICES).setVisible(false);
             mOptionsMenu.findItem(SHOW_BACKGROUND_PROCESSES).setVisible(false);
             mOptionsMenu.findItem(RESET_APP_PREFERENCES).setVisible(true);
+            mOptionsMenu.findItem(SHOW_PROTECTED_APPS).setVisible(true);
         }
     }
 
@@ -1296,6 +1302,10 @@ public class ManageApplications extends Fragment implements
             buildResetDialog();
         } else if (menuId == APP_INSTALL_LOCATION) {
             showAppInstallLocationSettingDlg();
+        } else if (menuId == SHOW_PROTECTED_APPS) {
+            //Launch Protected Apps Fragment
+            Intent intent = new Intent(getActivity(), ProtectedAppsActivity.class);
+            startActivity(intent);
         } else {
             // Handle the home button
             return false;

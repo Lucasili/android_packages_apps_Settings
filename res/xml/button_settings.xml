@@ -71,6 +71,11 @@
             android:persistent="false"
             settings:advanced="true"/>-->
 
+        <PreferenceScreen
+            android:key="slim_dim_settings"
+            android:fragment="com.android.settings.euphoria.SlimDimSettings"
+            android:title="@string/dim_nav_buttons_category" />
+
     </PreferenceCategory>
 
     <PreferenceCategory

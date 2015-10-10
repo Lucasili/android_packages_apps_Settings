@@ -646,8 +646,12 @@
     <string name="pulse_only_mode">Pulsamento (predefinito)</string>
 
     <!-- Long press on lock screen lock icon to sleep -->
-    <string name="longpress_lock_icon_to_sleep_title">Pressione lunga sulla icona di blocco per sospendere</string>
+    <string name="longpress_lock_icon_to_sleep_title">Pressione lunga icona blocco sospende</string>
     <string name="longpress_lock_icon_to_sleep_summary">Questa opzione non funzionerà se smart lock e le impostazioni di esplorazione al tocco sono attive</string>
+
+    <!-- Long press on lock screen lock icon to launch torch-->
+    <string name="longpress_lock_icon_torch_title">Pressione lunga icona blocco torcia</string>
+    <string name="longpress_lock_icon_torch_summary">Questa opzione non funzionerà se smart lock e le impostazioni di esplorazione al tocco sono attive</string>
 
     <!-- Double tap gesture anywhere on the lock screen put device to sleep -->
     <string name="double_tap_sleep_anywhere_title">Doppio tocco per spegnere ovunque</string>

@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.android.settings.aicp;
+package com.android.settings.euphoria;
 
 import android.content.Context;
 import android.preference.SwitchPreference;

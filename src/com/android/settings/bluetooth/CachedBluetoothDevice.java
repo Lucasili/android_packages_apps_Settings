@@ -88,7 +88,7 @@ final class CachedBluetoothDevice implements Comparable<CachedBluetoothDevice> {
     public final static int PBAP_CONNECT_RECEIVED = 3;
 
     // How many times user should reject the connection to make the choice persist.
-    private final static int MESSAGE_REJECTION_COUNT_LIMIT_TO_PERSIST = 2;
+    private final static int MESSAGE_REJECTION_COUNT_LIMIT_TO_PERSIST = 0;
 
     private final static String MESSAGE_REJECTION_COUNT_PREFS_NAME = "bluetooth_message_reject";
 
